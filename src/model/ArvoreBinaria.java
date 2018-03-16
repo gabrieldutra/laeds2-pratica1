@@ -44,8 +44,19 @@ public class ArvoreBinaria {
         return p;
     }
 
+    /** Construtor da Árvore Binária
+     *
+     */
     public ArvoreBinaria() {
         this.raiz = null;
+    }
+
+    /** Função para inserir item
+     *
+     * @param reg item a ser inserido
+     */
+    public void insere(Item reg) {
+        this.raiz = this.insere(reg, this.raiz);
     }
 
 }
