@@ -13,16 +13,26 @@ public class ArvoreBinaria {
     }
 
     private No raiz;
+    private static int contadorDeComps = 0;
 
     private Item pesquisa(Item reg, No p) {
+
         // Verifica se o nó atual é Nulo
         if (p == null) {
+            System.out.println("Comparações: " + contadorDeComps);
+            contadorDeComps = 0;
             return null; // Registro não encontrado
-        } else if (reg.compara(p.reg) < 0) { // Se o registro for menor do que o nó, vai pra esquerda na árvore
+        } else if (reg.compara(p.reg) < 0) { // Se o registro for menor do que 
+            // o nó, vai pra esquerda na árvore
+            contadorDeComps++;
             return pesquisa(reg, p.esq);
-        } else if (reg.compara(p.reg) > 0) { // Se o registro for maior do que o nó, vai pra direita na árvore
+        } else if (reg.compara(p.reg) > 0) { // Se o registro for maior do que 
+            // o nó, vai pra direita na árvore
+            contadorDeComps++;
             return pesquisa(reg, p.dir);
         } else { // Item encontrado
+            System.out.println("Comparações: " + contadorDeComps);
+            contadorDeComps = 0;
             return p.reg;
         }
     }
@@ -44,19 +54,26 @@ public class ArvoreBinaria {
         return p;
     }
 
-    /** Construtor da Árvore Binária
+    /**
+     * Construtor da Árvore Binária
      *
      */
     public ArvoreBinaria() {
         this.raiz = null;
     }
 
-    /** Função para inserir item
+    /**
+     * Função para inserir item
      *
      * @param reg item a ser inserido
      */
     public void insere(Item reg) {
         this.raiz = this.insere(reg, this.raiz);
+    }
+
+    public Item pesquisa(Item reg) {
+        Item a = this.pesquisa(reg, this.raiz);
+        return a;
     }
 
 }
