@@ -41,7 +41,7 @@ public class Principal {
         ArvoreBinaria arvoreBinaria;
         List<Item> itens;
 
-        System.out.println("Itens aleatórios:");
+        System.out.println("Itens ordenados:");
 
         // n varia de 1000 a 9000, de 1000 em 1000
         for (int n = 1000; n <= 9000; n += 1000) {
