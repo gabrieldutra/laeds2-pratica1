@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * Classe Árvore Binária
  *
  * @author Ziviani, gabrieldutra, MarceloFCandido, rubiotorres
  */
