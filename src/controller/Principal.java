@@ -1,7 +1,8 @@
 
-package model;
+package controller;
 
 import java.util.Random;
+import model.*;
 
 public class Principal {
     
@@ -123,11 +124,12 @@ public class Principal {
         
         ArvoreBinaria c = new ArvoreBinaria();
         
-        Random r = new Random(1000);
+        Random r = new Random();
         
         // Inserindo 1000 elementos na arvore
         for (int i = 0; i < 1000; i++) {
             long j = r.nextInt();
+            System.out.println(j);
             Item t = new Item((int) j);
             c.insere(t);
         }
